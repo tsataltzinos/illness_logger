@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="mainfeed"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Προσθήκη παιδιού
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+<ion-grid>
+  <ion-row justify-content-center align-items-center>
+    <ion-col size=5 size-xs=4 size-sm=3 size-md=2 size-lg=2>
+      <img src = "assets/baby-boy.png">
+    </ion-col>          
+  </ion-row>
+</ion-grid>
+
+<ion-grid>
+  <ion-row justify-content-center align-items-center>
+    <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+      <ion-card color="tertiary">
+        <ion-item>
+            <ion-label position="stacked">Όνομα παιδιού</ion-label>
+          <ion-input class="headertext" type="text" [(ngModel)]="child" placeholder="Όνομα Παιδιού"></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+          <ion-item >
+              <ion-label position="stacked">Ημερομηνία Γέννησης</ion-label>
+              <ion-datetime class="headertext"  min="2000" display-format="DD/MM/YYYY" [(ngModel)]="birthdate"></ion-datetime>
+            </ion-item>
+      </ion-card>
+
+      <ion-button expand="block" color="primary" shape="round" (click)="updatebaby()">Αποθήκευση</ion-button>
+      <ion-button expand="block" color="danger" shape="round" (click)="delbaby()">Διαγραφή</ion-button>
+      <ion-button expand="block" fill="clear" color="primary"  (click)="cancel()">Άκυρο</ion-button>   
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

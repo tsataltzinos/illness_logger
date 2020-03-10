@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="mainfeed"></ion-back-button>
+        </ion-buttons>
+    <ion-title>
+        Toddler's Illness Tracker!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding color="tertiary">
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col size=5 size-xs=4 size-sm=3 size-md=2 size-lg=2>
+        <img src = "assets/faq.png">
+      </ion-col>          
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid>
+    <ion-row no-padding justify-content-center align-items-center>
+      <ion-col size=12 size-xs=12 size-sm=6 size-md=4 size-lg=3>
+        <ion-button expand="block" size="large" style="text-transform: none;" color="medium" (click)="showdeveloper()">
+          <ion-grid>
+            <ion-row justify-content-center align-items-center>
+              <ion-col size=2>
+                  <ion-img src='assets/keyboard.png' style="height: 42px; background: transparent;"></ion-img>
+              </ion-col>
+              <ion-col size=10>
+                  <ion-label>Προγραμματιστής</ion-label>   
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+      <ion-col size=12 size-xs=12 size-sm=6 size-md=4 size-lg=3>
+        <ion-button expand="block" size="large" style="text-transform: none;" color="medium" (click) = "showdoctor()">
+          <ion-grid>
+            <ion-row justify-content-center align-items-center>
+              <ion-col size=2>
+                  <ion-img src='assets/stethoscope.png' style="height: 42px; background: transparent;"></ion-img>
+              </ion-col>
+              <ion-col size=10>
+                  <ion-label>Γιατρός</ion-label>   
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-button>
+      </ion-col>
+      <ion-col size=12 size-xs=12 size-sm=6 size-md=4 size-lg=3>
+        <ion-button expand="block" size="large" style="text-transform: none;" color="medium" (click)="showartist()">
+          <ion-grid>
+            <ion-row justify-content-center align-items-center>
+              <ion-col size=2>
+                <ion-img src='assets/paint.png' style="height: 42px; background: transparent;"></ion-img>
+              </ion-col>
+              <ion-col size=10>
+                <ion-label>Καλλιτεχνικά</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-button>      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

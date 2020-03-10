@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="mainfeed"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Αλλαγή δόσης φαρμάκου</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col size=5 size-xs=4 size-sm=3 size-md=2 size-lg=2>
+        <img src = "assets/dose.png">
+      </ion-col>          
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+        <ion-card color="tertiary">
+          <ion-item>
+              <ion-label position="stacked">Όνομα παιδιού</ion-label>
+            <ion-input class="headertext" type="text" [(ngModel)]="childname" placeholder="Όνομα Παιδιού"></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-title class="headertext">Βήμα 1. Επιλέξτε το φάρμακο</ion-card-title>
+          <ion-card>
+            <ion-item color="medium">
+              <ion-label>Δρ. Ουσία - Φάρμακο</ion-label>
+              <ion-select interface = "popover" [(ngModel)]="drugsel" (ngModelChange) = "refreshdrug()">
+                <ion-select-option value="Depon"> Paracetamol - Depon </ion-select-option>
+                <ion-select-option value="Apotel"> Paracetamol - Apotel </ion-select-option>
+                <ion-select-option value="Algofren"> Iboprufen - Algofren </ion-select-option>
+                <ion-select-option value="Augmentin 457"> Augmentin 457 - Amoxicillin trihydrate </ion-select-option>
+              </ion-select> 
+            </ion-item>
+          </ion-card>        
+      </ion-card>
+
+      <ion-card>
+          <ion-item >
+              <ion-label position="stacked">Ημερομηνία</ion-label>
+              <ion-datetime class="headertext"  min="2019" display-format="DD/MM/YYYY HH:mm" [(ngModel)]="creationtime"></ion-datetime>
+            </ion-item>
+      </ion-card>
+
+    <ion-button expand="block" color="primary" shape="round" (click)="updatedrug()">Αποθήκευση</ion-button>
+    <ion-button expand="block" color="danger" shape="round" (click)="deldrug()">Διαγραφή</ion-button>
+    <ion-button expand="block" fill="clear" color="primary"  (click)="cancel()">Άκυρο</ion-button>   
+    
+    </ion-col>  
+  </ion-row>
+</ion-grid>
+</ion-content>

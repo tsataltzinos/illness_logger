@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="mainfeed"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Υπολογιστής δοσολογιών</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <ion-col size=5 size-xs=4 size-sm=3 size-md=2 size-lg=2>
+            <img [src] = 'baby'>
+        </ion-col>          
+      </ion-row>
+    </ion-grid>
+
+
+
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+        <ion-card color="light">
+          <ion-card-title class="headertext">Βήμα 1. Επιλέξτε το φάρμακο</ion-card-title>
+          <ion-card>
+              <ion-item color="medium">
+                <ion-label>Φάρμακο - Δρ. Ουσία</ion-label>
+                <ion-select interface = "popover" [(ngModel)]="drugsel" (ngModelChange) = "refreshcard()">
+                  <ion-select-option value="Depon"> Paracetamol - Depon </ion-select-option>
+                  <ion-select-option value="Apotel"> Paracetamol - Apotel </ion-select-option>
+                  <ion-select-option value="Algofren"> Iboprufen - Algofren </ion-select-option>
+                  <ion-select-option value="Augmentin 457"> Augmentin 457 - Amoxicillin trihydrate </ion-select-option>
+                </ion-select> 
+              </ion-item>
+            </ion-card>        
+        </ion-card>
+        </ion-col>  
+      </ion-row>
+
+
+
+      <ion-row justify-content-center align-items-center>
+        <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+          <ion-card color="light" disabled={{this.disable}}>
+            <ion-card-title class="headertext">Βήμα 2. Γράψτε εδώ το βάρος του μωρού σε κιλά</ion-card-title>
+              <ion-item color="light" justify-content-center align-items-center>
+                <ion-input class="headertext" inputmode="numeric" placeholder="kg" type="number"  [(ngModel)]="weight" (ionChange)="refreshcard()"></ion-input>
+              </ion-item>
+              <ion-item color="light">
+                <ion-range [(ngModel)]="kgs" min="4" max="24" step="0.1" color="danger" pin="true" (ionChange) = "refreshkgs()">
+                  <ion-label slot="start">4</ion-label>
+                  <ion-label slot="end">24</ion-label>
+                </ion-range>
+              </ion-item>
+          </ion-card>
+        </ion-col>  
+      </ion-row>
+      <ion-row justify-content-center align-items-center>
+        <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+          <ion-card color="primary" disabled={{this.disable}}>
+            <ion-label>
+              <h2 class="headertext"> Η δόση για το {{this.drugsel}} είναι η παρακάτω</h2>
+              <h1 class="headertext"> {{this.dosage}} ml</h1>
+            </ion-label>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row justify-content-center align-items-center>
+        <ion-col size=12 size-xs=12 size-sm=8 size-md=6 size-lg=4 no-padding>
+          <ion-card color="light" disabled={{this.disable}}>
+            <ion-label>
+              <h2 class="headertext2">Λεπτομέριες σχετικά με το φάρμακο</h2>
+              <h2>Φάρμακο: {{ this.drugsel }} </h2>
+              <h2>Δραστική ουσία: {{this.substance}} </h2>
+              <ion-grid>
+                <ion-row justify-content-center align-items-center>
+                  <ion-col size=5 size-xs=4 size-sm=4 size-md=4 size-lg=3>
+                      <img [src] = "drugimg">
+                  </ion-col>          
+                </ion-row>
+              </ion-grid>
+              <h3><b> {{usage}} </b></h3>
+              <div class="">Οι δοσολογίες προκύπτουν από τις οδηγίες του εκάστοτε φαρμάκου και είναι ενδεικτικές.
+                <div class="">Σε καμία περίπτωση δεν πρέπει να αντικαθιστούν τις οδηγίες του παιδιάτρου.
+                  <div class="">Συμβουλευτείτε τον γιατρό ή τον φαρμακοποιό σας για επιβεβαίωση των τιμών που αναγράφονται εδώ!
+                  </div>
+                </div>
+              </div>
+            </ion-label>
+          </ion-card>
+        </ion-col>
+        </ion-row>
+  </ion-grid>
+</ion-content>

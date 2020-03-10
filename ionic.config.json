@@ -1,0 +1,7 @@
+{
+  "name": "illneslogger",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

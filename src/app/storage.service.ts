@@ -13,6 +13,7 @@ export interface ChildItem {
   id: number;
   name: string;
   birthdate: string;
+  weight: number;
 }
 
 const ITEMS_KEY = 'temperatures';

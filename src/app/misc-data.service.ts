@@ -5,10 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class MiscDataService {
   currentFeed: any = {};
+  currentweight: number;
 
   constructor() { }
 
   setcurrentfeed(feed) {
     this.currentFeed = feed;
+  }
+
+  setcurrentweight(weight) {
+    this.currentweight = weight;
   }
 }

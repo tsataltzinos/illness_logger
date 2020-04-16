@@ -47,6 +47,13 @@
             </ion-item>
       </ion-card>
 
+      <ion-card color="tertiary">
+        <ion-item>
+            <ion-label position="stacked">Ενδεικτική Δόση σε ml για το βάρος αυτού του παιδιού</ion-label>
+          <ion-input disabled="true" class="headertext" type="text" [(ngModel)]="dosage" placeholder="ml" value=" {{dosage}} " color="primary"></ion-input>
+        </ion-item>
+      </ion-card>
+
     <ion-button expand="block" color="primary" shape="round" (click)="adddrug()">Προσθήκη</ion-button>
     <ion-button expand="block" fill="clear" color="primary"  (click)="cancel()">Άκυρο</ion-button>   
     

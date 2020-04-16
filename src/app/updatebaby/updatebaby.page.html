@@ -35,6 +35,19 @@
             </ion-item>
       </ion-card>
 
+      <ion-card color="light">
+        <ion-card-title class="headertext">Γράψτε εδώ το βάρος του μωρού σε κιλά</ion-card-title>
+          <ion-item color="light" justify-content-center align-items-center>
+            <ion-input class="headertext" inputmode="numeric" placeholder="kg" type="number"  [(ngModel)]="weight" (ionChange)="refreshcard()"></ion-input>
+          </ion-item>
+          <ion-item color="light">
+            <ion-range [(ngModel)]="kgs" min="4" max="24" step="0.1" color="danger" pin="true" (ionChange) = "refreshkgs()">
+              <ion-label slot="start">4</ion-label>
+              <ion-label slot="end">24</ion-label>
+            </ion-range>
+          </ion-item>
+      </ion-card>
+
       <ion-button expand="block" color="primary" shape="round" (click)="updatebaby()">Αποθήκευση</ion-button>
       <ion-button expand="block" color="danger" shape="round" (click)="delbaby()">Διαγραφή</ion-button>
       <ion-button expand="block" fill="clear" color="primary"  (click)="cancel()">Άκυρο</ion-button>   
